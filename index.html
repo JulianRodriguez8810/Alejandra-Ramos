@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alejandra Ramos | Periodismo de Investigación y Cobertura Independiente</title>
+    <meta name="description" content="Portafolio oficial, reportajes de investigación, canal ciudadano y coberturas de Alejandra Ramos, periodista independiente.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        secondary: '#b52426',
+                        'editorial-bg': '#f8f9fa',
+                        'editorial-dark': '#0f172a',
+                        'editorial-gray': '#64748b'
+                    },
+                    fontFamily: {
+                        serif: ['Newsreader', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .page-section { display: none; }
+        .page-section.active { display: block; }
+        .chyron-box { background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); }
+        .gradient-overlay { background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%); }
+    </style>
+</head>
+<body class="bg-editorial-bg text-slate-900 font-sans antialiased flex flex-col min-h-screen">
+    <!-- HEADER & NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="javascript:void(0)" onclick="showPage('inicio')" class="flex items-center gap-3 group">
+                <div class="relative flex items-center justify-center">
+                    <svg class="w-10 h-10 text-black group-hover:scale-105 transition-transform duration-200" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 80 L50 20 L80 80 M35 55 L65 55" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="50" cy="38" r="7" fill="#b52426"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-slate-900 group-hover:text-secondary transition-colors">Alejandra Ramos</span>
+                    <span class="text-xs font-semibold uppercase tracking-widest text-secondary">Periodismo Independiente</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links Desktop -->
+            <nav class="hidden md:flex items-center gap-8">
+                <button onclick="showPage('inicio')" id="nav-inicio" class="nav-btn text-sm font-semibold tracking-wide transition-colors py-2 border-b-2 border-secondary text-slate-900">INICIO</button>
+                <button onclick="showPage('reportajes')" id="nav-reportajes" class="nav-btn text-sm font-semibold tracking-wide transition-colors py-2 border-b-2 border-transparent text-slate-600 hover:text-slate-900">REPORTAJES & VIDEOS</button>
+                <button onclick="showPage('redes')" id="nav-redes" class="nav-btn text-sm font-semibold tracking-wide transition-colors py-2 border-b-2 border-transparent text-slate-600 hover:text-slate-900">REDES & COMUNIDAD</button>
+                <button onclick="showPage('contacto')" id="nav-contacto" class="nav-btn text-sm font-semibold tracking-wide transition-colors py-2 border-b-2 border-transparent text-slate-600 hover:text-slate-900">CONTACTO & PROPUESTAS</button>
+                <button onclick="showPage('admin')" id="nav-admin" class="nav-btn text-xs font-bold tracking-widest uppercase text-slate-400 hover:text-secondary transition-colors px-2 py-1 rounded border border-slate-200">/ADMIN</button>
+            </nav>
+
+            <!-- Social Links & Action -->
+            <div class="hidden lg:flex items-center gap-4">
+                <div class="flex items-center gap-3 border-r border-slate-200 pr-4">
+                    <a href="https://www.youtube.com/@AlejandraRamosNoticias" target="_blank" rel="noopener" class="text-slate-500 hover:text-secondary transition-colors p-1" title="YouTube">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/alejandralincoln/?hl=es" target="_blank" rel="noopener" class="text-slate-500 hover:text-secondary transition-colors p-1" title="Instagram">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/alejandrapaolaramos/?locale=es_LA" target="_blank" rel="noopener" class="text-slate-500 hover:text-secondary transition-colors p-1" title="Facebook">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                </div>
+                <button onclick="showPage('contacto')" class="bg-secondary hover:bg-red-700 text-white font-semibold text-xs tracking-wider uppercase px-4 py-2.5 rounded shadow-sm hover:shadow transition-all">
+                    Enviar Propuesta
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-slate-700 hover:text-slate-900 p-2 focus:outline-none">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3">
+            <button onclick="showPage('inicio'); toggleMobileMenu();" class="block w-full text-left font-semibold text-slate-900 py-2 border-b border-slate-100">INICIO</button>
+            <button onclick="showPage('reportajes'); toggleMobileMenu();" class="block w-full text-left font-semibold text-slate-600 hover:text-slate-900 py-2 border-b border-slate-100">REPORTAJES & VIDEOS</button>
+            <button onclick="showPage('redes'); toggleMobileMenu();" class="block w-full text-left font-semibold text-slate-600 hover:text-slate-900 py-2 border-b border-slate-100">REDES & COMUNIDAD</button>
+            <button onclick="showPage('contacto'); toggleMobileMenu();" class="block w-full text-left font-semibold text-slate-600 hover:text-slate-900 py-2 border-b border-slate-100">CONTACTO & PROPUESTAS</button>
+            <button onclick="showPage('admin'); toggleMobileMenu();" class="block w-full text-left font-bold text-secondary py-2 border-b border-slate-100">PANEL DE CONTROL /ADMIN</button>
+            <div class="pt-2 flex items-center justify-between">
+                <div class="flex gap-4">
+                    <a href="https://www.youtube.com/@AlejandraRamosNoticias" target="_blank" class="text-slate-600 hover:text-secondary">YouTube</a>
+                    <a href="https://www.instagram.com/alejandralincoln/?hl=es" target="_blank" class="text-slate-600 hover:text-secondary">Instagram</a>
+                    <a href="https://www.facebook.com/alejandrapaolaramos/?locale=es_LA" target="_blank" class="text-slate-600 hover:text-secondary">Facebook</a>
+                </div>
+                <button onclick="showPage('contacto'); toggleMobileMenu();" class="bg-secondary text-white text-xs font-bold uppercase px-3 py-2 rounded">
+                    Enviar Propuesta
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- ==================== SECCIÓN INICIO ==================== -->
+        <div id="page-inicio" class="page-section active">
+            <!-- Hero Section -->
+            <section class="relative bg-slate-900 text-white overflow-hidden py-16 lg:py-24">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/20 border border-secondary/40 text-secondary text-xs font-bold uppercase tracking-wider">
+                            <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+                            Periodismo Independiente
+                        </div>
+                        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                            Investigación rigurosa,<br/>
+                            <span class="italic text-slate-300 font-normal">la verdad sin concesiones.</span>
+                        </h1>
+                        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+                            Más de una década de periodismo de investigación sobre corrupción, medio ambiente y justicia social. Información verificada y de impacto directo en la sociedad.
+                        </p>
+                        <div class="pt-4 flex flex-wrap gap-4">
+                            <button onclick="showPage('reportajes')" class="bg-secondary hover:bg-red-700 text-white font-semibold text-sm px-6 py-3.5 rounded shadow-lg transition-all flex items-center gap-2">
+                                Ver Investigaciones
+                                <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                            </button>
+                            <button onclick="showPage('contacto')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold text-sm px-6 py-3.5 rounded transition-all">
+                                Enviar Denuncia Confidencial
+                            </button>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative rounded-2xl overflow-hidden border-2 border-slate-800 shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=80" alt="Alejandra Ramos Periodista" class="w-full h-[450px] object-cover object-center">
+                            <div class="absolute bottom-0 inset-x-0 chyron-box p-4 border-t border-white/10 flex items-center justify-between">
+                                <div>
+                                    <p class="text-xs font-bold uppercase tracking-wider text-secondary">Alejandra Ramos</p>
+                                    <p class="text-sm font-semibold text-white">Periodista de Investigación & Presentadora</p>
+                                </div>
+                                <span class="material-symbols-outlined text-white/80">verified</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Metrics Bar -->
+            <section class="bg-white border-y border-slate-200 py-8">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <a href="https://www.youtube.com/@AlejandraRamosNoticias" target="_blank" class="flex items-center gap-4 p-4 rounded-xl border border-slate-100 hover:border-red-200 hover:bg-red-50/30 transition-all group">
+                        <div class="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </div>
+                        <div>
+                            <span class="text-2xl font-bold font-serif text-slate-900 block">245.000+</span>
+                            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Suscriptores en YouTube</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.instagram.com/alejandralincoln/?hl=es" target="_blank" class="flex items-center gap-4 p-4 rounded-xl border border-slate-100 hover:border-pink-200 hover:bg-pink-50/30 transition-all group">
+                        <div class="w-12 h-12 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </div>
+                        <div>
+                            <span class="text-2xl font-bold font-serif text-slate-900 block">112.000+</span>
+                            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Seguidores en Instagram</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.facebook.com/alejandrapaolaramos/?locale=es_LA" target="_blank" class="flex items-center gap-4 p-4 rounded-xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 transition-all group">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </div>
+                        <div>
+                            <span class="text-2xl font-bold font-serif text-slate-900 block">380.000+</span>
+                            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Comunidad en Facebook</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Featured Research -->
+            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 pb-4 border-b border-slate-200">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-secondary block mb-1">Última Investigación</span>
+                        <h2 class="font-serif text-3xl font-bold text-slate-900">El Mercado Negro del Agua: Documental Exclusivo</h2>
+                    </div>
+                    <button onclick="showPage('reportajes')" class="mt-4 md:mt-0 text-sm font-bold text-slate-900 hover:text-secondary flex items-center gap-1 group">
+                        Ver todas las investigaciones
+                        <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200">
+                    <div class="lg:col-span-7 relative h-[350px] lg:h-[450px]">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80" alt="Documental Mercado Negro del Agua" class="w-full h-full object-cover">
+                        <a href="https://www.youtube.com/@AlejandraRamosNoticias" target="_blank" class="absolute inset-0 bg-black/40 flex items-center justify-center group hover:bg-black/30 transition-all">
+                            <div class="w-20 h-20 rounded-full bg-secondary/90 text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-4xl fill-current">play_arrow</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="lg:col-span-5 p-6 lg:p-10 space-y-4">
+                        <span class="px-3 py-1 bg-red-100 text-secondary text-xs font-bold uppercase tracking-wider rounded-full">Reportaje Especial</span>
+                        <h3 class="font-serif text-2xl lg:text-3xl font-bold text-slate-900">Crisis Hídrica: El negocio detrás de la sequía</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Una investigación de 6 meses revela la desviación ilegal de ríos principales para uso industrial sin regulación ambiental. Testimonios de comuneros y documentos oficiales inéditos.
+                        </p>
+                        <div class="pt-2 text-xs text-slate-500 flex items-center gap-4">
+                            <span><strong class="text-slate-700">Duración:</strong> 42 min</span>
+                            <span>•</span>
+                            <span><strong class="text-slate-700">Publicado:</strong> Septiembre 2026</span>
+                        </div>
+                        <div class="pt-4">
+                            <a href="https://www.youtube.com/@AlejandraRamosNoticias" target="_blank" class="inline-flex items-center justify-center w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm py-3 px-6 rounded transition-colors gap-2">
+                                Ver Documental Completo en YouTube
+                                <span class="material-symbols-outlined text-sm">open_in_new</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Citizen Channel Banner -->
+            <section class="bg-slate-900 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+                    <span class="material-symbols-outlined text-5xl text-secondary mb-4">campaign</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-4">¿Tienes una historia o denuncia para investigar?</h2>
+                    <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+                        El Canal Ciudadano es un espacio seguro para alertar sobre irregulares y corrupción. Mantenemos el más estricto secreto profesional y protección de fuentes.
+                    </p>
+                    <button onclick="showPage('contacto')" class="bg-secondary hover:bg-red-700 text-white font-bold text-sm tracking-wider uppercase px-8 py-4 rounded-lg shadow-xl hover:shadow-2xl transition-all">
+                        Ir al Canal de Denuncias Anónimas
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== SECCIÓN REPORTAJES ==================== -->
+        <div id="page-reportajes" class="page-section">
+            <div class="bg-slate-900 text-white py-12 border-b border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+                    <div>
+                        <h1 class="font-serif text-4xl font-bold mb-3">Reportajes & Investigaciones</h1>
+                        <p class="text-slate-300 text-lg max-w-2xl">Archivo audiovisual completo de especiales periodísticos, entrevistas en profundidad y coberturas de campo.</p>
+                    </div>
+                    <button onclick="showPage('admin')" class="hidden sm:flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded border border-slate-700 transition-colors">
+                        <span class="material-symbols-outlined text-base text-secondary">add_circle</span>
+                        Añadir Video (/admin)
+                    </button>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                <!-- Filter Bar -->
+                <div class="flex flex-wrap items-center gap-3 mb-8 pb-4 border-b border-slate-200">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-500 mr-2">Filtrar por:</span>
+                    <button onclick="filterVideos('all')" class="filter-btn px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-900 text-white transition-all">Todos</button>
+                    <button onclick="filterVideos('reportaje')" class="filter-btn px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-200 text-slate-700 hover:bg-slate-300 transition-all">Reportajes</button>
+                    <button onclick="filterVideos('entrevista')" class="filter-btn px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-200 text-slate-700 hover:bg-slate-300 transition-all">Entrevistas</button>
+                    <button onclick="filterVideos('directo')" class="filter-btn px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-200 text-slate-700 hover:bg-slate-300 transition-all">Directos</button>
+                </div>
+
+                <!-- Dynamic Video Grid -->
+                <div id="video-grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Dynamic videos rendered via JS renderVideos() -->
+                </div>
+
+                <!-- Documental Series Section -->
+                <div class="mt-16 bg-slate-900 rounded-2xl text-white p-8 lg:p-12">
+                    <div class="max-w-3xl mb-8">
+                        <span class="text-xs font-bold uppercase tracking-widest text-secondary block mb-2">Serie Documental Original</span>
+                        <h2 class="font-serif text-3xl font-bold">Tras la Pista del Litio (4 Episodios)</h2>
+                        <p class="text-slate-300 text-sm mt-2">Investigación transfronteriza sobre la extracción de litio, derechos comunitarios y corporaciones internacionales.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <a href="https://www.youtube.com/@AlejandraRamosNoticias" target="_blank" class="p-4 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors border border-slate-700 block group">
+                            <span class="text-xs font-bold text-secondary uppercase tracking-wider block mb-1">Episodio 1</span>
+                            <h4 class="font-serif font-bold text-white group-hover:text-secondary transition-colors">El Triángulo Blanco</h4>
+                            <p class="text-xs text-slate-400 mt-1">24 min</p>
+                        </a>
+                        <a href="https://www.youtube.com/@AlejandraRamosNoticias" target="_blank" class="p-4 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors border border-slate-700 block group">
+                            <span class="text-xs font-bold text-secondary uppercase tracking-wider block mb-1">Episodio 2</span>
+                            <h4 class="font-serif font-bold text-white group-hover:text-secondary transition-colors">Salar de Conflicto</h4>
+                            <p class="text-xs text-slate-400 mt-1">31 min</p>
+                        </a>
+                        <a href="https://www.youtube.com/@AlejandraRamosNoticias" target="_blank" class="p-4 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors border border-slate-700 block group">
+                            <span class="text-xs font-bold text-secondary uppercase tracking-wider block mb-1">Episodio 3</span>
+                            <h4 class="font-serif font-bold text-white group-hover:text-secondary transition-colors">Contratos en la Sombra</h4>
+                            <p class="text-xs text-slate-400 mt-1">29 min</p>
+                        </a>
+                        <a href="https://www.youtube.com/@AlejandraRamosNoticias" target="_blank" class="p-4 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors border border-slate-700 block group">
+                            <span class="text-xs font-bold text-secondary uppercase tracking-wider block mb-1">Episodio 4</span>
+                            <h4 class="font-serif font-bold text-white group-hover:text-secondary transition-colors">El Futuro Incierto</h4>
+                            <p class="text-xs text-slate-400 mt-1">38 min</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SECCIÓN REDES & COMUNIDAD ==================== -->
+        <div id="page-redes" class="page-section">
+            <div class="bg-slate-900 text-white py-12 border-b border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <h1 class="font-serif text-4xl font-bold mb-2">Redes & Comunidad</h1>
+                        <p class="text-slate-300 text-lg">Sigue el periodismo en tiempo real a través de las plataformas digitales oficiales.</p>
+                    </div>
+                    <div class="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 px-4 py-2 rounded-full text-emerald-400 text-xs font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                        Transmisiones en Vivo Semanales
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+                <!-- Bento Grid Layout -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    <!-- YouTube Big Card (7 Cols) -->
+                    <div class="lg:col-span-7 bg-white rounded-2xl border border-slate-200 p-6 lg:p-8 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center">
+                                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-serif text-xl font-bold text-slate-900">Canal Oficial de YouTube</h3>
+                                        <p class="text-xs text-slate-500">@AlejandraRamosNoticias • 245K suscriptores</p>
+                                    </div>
+                                </div>
+                                <a href="https://www.youtube.com/@AlejandraRamosNoticias" target="_blank" class="bg-red-600 hover:bg-red-700 text-white text-xs font-bold uppercase px-4 py-2 rounded-lg transition-colors">
+                                    Suscribirse
+                                </a>
+                            </div>
+
+                            <p class="text-slate-600 text-sm mb-6">
+                                Todos los domingos a las 20:00 (GMT-3) nuevo análisis en vivo y discusión directa con la audiencia a través del chat de la comunidad.
+                            </p>
+
+                            <!-- Latest Videos Thumbnails -->
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                                <a href="https://www.youtube.com/@AlejandraRamosNoticias" target="_blank" class="group block">
+                                    <div class="relative h-28 rounded-lg overflow-hidden mb-2">
+                                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Video thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+                                    </div>
+                                    <p class="text-xs font-semibold text-slate-800 line-clamp-2 group-hover:text-secondary">Crisis Hídrica: El negocio del agua</p>
+                                </a>
+                                <a href="https://www.youtube.com/@AlejandraRamosNoticias" target="_blank" class="group block">
+                                    <div class="relative h-28 rounded-lg overflow-hidden mb-2">
+                                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Video thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+                                    </div>
+                                    <p class="text-xs font-semibold text-slate-800 line-clamp-2 group-hover:text-secondary">Entrevista Exclusiva Fiscal General</p>
+                                </a>
+                                <a href="https://www.youtube.com/@AlejandraRamosNoticias" target="_blank" class="group block">
+                                    <div class="relative h-28 rounded-lg overflow-hidden mb-2">
+                                        <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=400&q=80" alt="Video thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+                                    </div>
+                                    <p class="text-xs font-semibold text-slate-800 line-clamp-2 group-hover:text-secondary">Serie Litio: Episodio Final</p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <a href="https://www.youtube.com/@AlejandraRamosNoticias" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-slate-900 hover:text-secondary uppercase tracking-wider pt-4 border-t border-slate-100">
+                            Ir al Canal de YouTube
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+
+                    <!-- Instagram Card (5 Cols) -->
+                    <div class="lg:col-span-5 bg-white rounded-2xl border border-slate-200 p-6 lg:p-8 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center">
+                                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-serif text-xl font-bold text-slate-900">Instagram Feed</h3>
+                                        <p class="text-xs text-slate-500">@alejandralincoln • 112K seguidores</p>
+                                    </div>
+                                </div>
+                                <a href="https://www.instagram.com/alejandralincoln/?hl=es" target="_blank" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-xs font-bold uppercase px-4 py-2 rounded-lg transition-all">
+                                    Seguir
+                                </a>
+                            </div>
+
+                            <!-- Photo Grid 2x2 -->
+                            <div class="grid grid-cols-2 gap-3 mb-6">
+                                <a href="https://www.instagram.com/alejandralincoln/?hl=es" target="_blank" class="relative h-32 rounded-lg overflow-hidden group">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Instagram photo" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                                </a>
+                                <a href="https://www.instagram.com/alejandralincoln/?hl=es" target="_blank" class="relative h-32 rounded-lg overflow-hidden group">
+                                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Instagram photo" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                                </a>
+                                <a href="https://www.instagram.com/alejandralincoln/?hl=es" target="_blank" class="relative h-32 rounded-lg overflow-hidden group">
+                                    <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=400&q=80" alt="Instagram photo" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                                </a>
+                                <a href="https://www.instagram.com/alejandralincoln/?hl=es" target="_blank" class="relative h-32 rounded-lg overflow-hidden group">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Instagram photo" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                                </a>
+                            </div>
+                        </div>
+
+                        <a href="https://www.instagram.com/alejandralincoln/?hl=es" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-slate-900 hover:text-secondary uppercase tracking-wider pt-4 border-t border-slate-100">
+                            Ver Perfil de Instagram
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Facebook Full Width Section -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 lg:p-8 shadow-sm">
+                    <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-serif text-xl font-bold text-slate-900">Página Oficial de Facebook</h3>
+                                <p class="text-xs text-slate-500">@alejandrapaolaramos • 380K seguidores</p>
+                            </div>
+                        </div>
+                        <a href="https://www.facebook.com/alejandrapaolaramos/?locale=es_LA" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold uppercase px-4 py-2 rounded-lg transition-colors">
+                            Seguir en Facebook
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider block mb-2">Publicación Reciente</span>
+                            <p class="text-sm text-slate-800 leading-relaxed">
+                                "Mañana a las 18:00hs presentamos los resultados de la encuesta ciudadana sobre la reforma judicial en la capital. ¿Qué opinan sobre los cambios propuestos?"
+                            </p>
+                            <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
+                                <span>1.2K me gusta • 340 comentarios</span>
+                                <a href="https://www.facebook.com/alejandrapaolaramos/?locale=es_LA" target="_blank" class="font-bold text-blue-600 hover:underline">Ver publicación</a>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider block mb-2">Encuesta Activa</span>
+                            <p class="text-sm text-slate-800 leading-relaxed">
+                                "¿Consideras suficiente el presupuesto destinado a la educación pública para el periodo 2027?"
+                            </p>
+                            <div class="mt-3 space-y-2">
+                                <div class="w-full bg-slate-200 rounded-full h-6 relative overflow-hidden">
+                                    <div class="bg-blue-600 h-full w-[82%]"></div>
+                                    <span class="absolute inset-0 flex items-center justify-between px-3 text-xs font-bold text-slate-900">
+                                        <span>No, es insuficiente</span>
+                                        <span>82%</span>
+                                    </span>
+                                </div>
+                                <div class="w-full bg-slate-200 rounded-full h-6 relative overflow-hidden">
+                                    <div class="bg-blue-400 h-full w-[18%]"></div>
+                                    <span class="absolute inset-0 flex items-center justify-between px-3 text-xs font-bold text-slate-900">
+                                        <span>Sí, es adecuado</span>
+                                        <span>18%</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SECCIÓN CONTACTO & PROPUESTAS ==================== -->
+        <div id="page-contacto" class="page-section">
+            <div class="bg-slate-900 text-white py-12 border-b border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h1 class="font-serif text-4xl font-bold mb-3">Contacto & Canal de Denuncias</h1>
+                    <p class="text-slate-300 text-lg max-w-2xl">Canal seguro para envío de propuestas de investigación, documentos confidenciales y solicitudes de prensa.</p>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <!-- Main Form (8 Cols) -->
+                    <div class="lg:col-span-8 bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 shadow-sm">
+                        <div class="mb-8">
+                            <h2 class="font-serif text-2xl font-bold text-slate-900 mb-2">Formulario de Envío de Información</h2>
+                            <p class="text-slate-600 text-sm">Selecciona la categoría de tu envío. Toda la información es tratada bajo secreto profesional periodístico.</p>
+                        </div>
+
+                        <!-- Category Selector -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+                            <button type="button" onclick="selectCategory('denuncia')" id="cat-denuncia" class="cat-btn p-3 rounded-xl border-2 border-secondary bg-red-50 text-slate-900 text-center transition-all">
+                                <span class="material-symbols-outlined text-secondary block mb-1">gavel</span>
+                                <span class="text-xs font-bold block">Denuncia</span>
+                            </button>
+                            <button type="button" onclick="selectCategory('propuesta')" id="cat-propuesta" class="cat-btn p-3 rounded-xl border-2 border-slate-200 text-slate-600 text-center transition-all hover:border-slate-400">
+                                <span class="material-symbols-outlined block mb-1">lightbulb</span>
+                                <span class="text-xs font-bold block">Propuesta Tema</span>
+                            </button>
+                            <button type="button" onclick="selectCategory('prensa')" id="cat-prensa" class="cat-btn p-3 rounded-xl border-2 border-slate-200 text-slate-600 text-center transition-all hover:border-slate-400">
+                                <span class="material-symbols-outlined block mb-1">newspaper</span>
+                                <span class="text-xs font-bold block">Prensa / Medios</span>
+                            </button>
+                            <button type="button" onclick="selectCategory('general')" id="cat-general" class="cat-btn p-3 rounded-xl border-2 border-slate-200 text-slate-600 text-center transition-all hover:border-slate-400">
+                                <span class="material-symbols-outlined block mb-1">mail</span>
+                                <span class="text-xs font-bold block">General</span>
+                            </button>
+                        </div>
+
+                        <!-- Form -->
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                            <div class="flex items-center justify-between p-4 bg-slate-50 rounded-xl border border-slate-200 mb-4">
+                                <div class="flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-slate-700">shield</span>
+                                    <div>
+                                        <p class="text-xs font-bold text-slate-900">Modo Anónimo de Alta Seguridad</p>
+                                        <p class="text-xs text-slate-500">No guardaremos tu IP ni datos personales</p>
+                                    </div>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" id="anonymous-toggle" onchange="toggleAnonymousMode()" class="sr-only peer">
+                                    <div class="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+                                </label>
+                            </div>
+
+                            <div id="personal-fields" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Nombre Completo</label>
+                                    <input type="text" id="form-name" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-sm" placeholder="Ej: Maria Gonzalez">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Correo Electrónico</label>
+                                    <input type="email" id="form-email" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-sm" placeholder="maria@ejemplo.com">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Asunto / Título de la Información</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-sm" placeholder="Resumen del tema o caso a investigar">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Detalles de la Propuesta / Denuncia</label>
+                                <textarea rows="5" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-sm" placeholder="Detalla los hechos, fechas, involucrados y antecedentes pertinentes..."></textarea>
+                            </div>
+
+                            <!-- Drag & Drop Upload -->
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Adjuntar Archivos / Pruebas (PDF, PNG, JPG max 25MB)</label>
+                                <div id="drop-zone" onclick="document.getElementById('file-input').click()" class="border-2 border-dashed border-slate-300 hover:border-secondary rounded-xl p-6 text-center cursor-pointer transition-colors bg-slate-50 hover:bg-slate-100/50">
+                                    <span class="material-symbols-outlined text-4xl text-slate-400 mb-2">upload_file</span>
+                                    <p class="text-xs font-semibold text-slate-700">Arrastra tus archivos aquí o haz clic para examinar</p>
+                                    <p class="text-[10px] text-slate-500 mt-1">Soporta cifrado automático en servidor</p>
+                                    <input type="file" id="file-input" class="hidden" multiple onchange="handleFileSelect(event)">
+                                </div>
+                                <div id="file-list" class="mt-2 space-y-1 text-xs text-slate-600"></div>
+                            </div>
+
+                            <button type="submit" class="w-full bg-secondary hover:bg-red-700 text-white font-bold text-sm tracking-wider uppercase py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined text-lg">send</span>
+                                Enviar Mensaje de Forma Segura
+                            </button>
+                        </form>
+
+                        <div id="contact-success" class="hidden p-6 bg-emerald-50 border border-emerald-200 rounded-xl text-center space-y-3 mt-6">
+                            <span class="material-symbols-outlined text-5xl text-emerald-600">check_circle</span>
+                            <h3 class="font-serif text-xl font-bold text-emerald-900">Mensaje Enviado con Éxito</h3>
+                            <p class="text-xs text-emerald-800">Tu propuesta ha sido cifrada y registrada en la cola del equipo de investigación. Nos pondremos en contacto si la información requiere seguimiento.</p>
+                            <button onclick="resetContactForm()" class="text-xs font-bold text-emerald-900 underline uppercase tracking-wider pt-2">Enviar otro mensaje</button>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Security & Info (4 Cols) -->
+                    <div class="lg:col-span-4 space-y-6">
+                        <!-- PGP Security Card -->
+                        <div class="bg-slate-900 text-white rounded-2xl p-6 shadow-md border border-slate-800 space-y-4">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-secondary text-3xl">lock</span>
+                                <div>
+                                    <h3 class="font-serif text-lg font-bold">Canal PGP / Signal</h3>
+                                    <p class="text-xs text-slate-400">Para informantes y fuentes confidenciales</p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                Si requieres máxima protección al compartir documentos de alta sensibilidad, utiliza nuestra clave pública PGP o contáctanos directamente vía Signal.
+                            </p>
+                            <div class="p-3 bg-slate-800 rounded-lg border border-slate-700">
+                                <span class="text-[10px] font-mono text-slate-400 block mb-1">Huella Digital PGP:</span>
+                                <code class="text-[11px] font-mono text-red-400 block break-all">4F89 2B10 99C3 881A 77FF 1200 AABB 3344</code>
+                            </div>
+                            <button onclick="copyFingerprint()" id="pgp-btn" class="w-full bg-slate-800 hover:bg-slate-700 text-xs font-bold uppercase tracking-wider py-2.5 rounded border border-slate-700 transition-colors">
+                                Copiar Clave PGP
+                            </button>
+                        </div>
+
+                        <!-- Contact Directory -->
+                        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-4">
+                            <h3 class="font-serif text-lg font-bold text-slate-900 pb-2 border-b border-slate-100">Directorio Institucional</h3>
+                            <div class="space-y-3 text-xs">
+                                <div>
+                                    <span class="font-bold text-slate-800 block">Prensa & Entrevistas:</span>
+                                    <a href="mailto:prensa@alejandraramos.com" class="text-secondary hover:underline">prensa@alejandraramos.com</a>
+                                </div>
+                                <div>
+                                    <span class="font-bold text-slate-800 block">Equipo de Investigación:</span>
+                                    <a href="mailto:investigaciones@alejandraramos.com" class="text-secondary hover:underline">investigaciones@alejandraramos.com</a>
+                                </div>
+                                <div>
+                                    <span class="font-bold text-slate-800 block">Conferencias & Charlas:</span>
+                                    <a href="mailto:conferencias@alejandraramos.com" class="text-secondary hover:underline">conferencias@alejandraramos.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Platforms Box -->
+                        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-3">
+                            <h3 class="font-serif text-lg font-bold text-slate-900 pb-2 border-b border-slate-100">Redes Oficiales</h3>
+                            <div class="space-y-2 text-xs">
+                                <a href="https://www.youtube.com/@AlejandraRamosNoticias" target="_blank" class="flex items-center justify-between p-2 rounded hover:bg-slate-50 transition-colors">
+                                    <span class="font-semibold text-slate-700">YouTube Noticias</span>
+                                    <span class="text-secondary font-bold">@AlejandraRamosNoticias</span>
+                                </a>
+                                <a href="https://www.instagram.com/alejandralincoln/?hl=es" target="_blank" class="flex items-center justify-between p-2 rounded hover:bg-slate-50 transition-colors">
+                                    <span class="font-semibold text-slate-700">Instagram Oficial</span>
+                                    <span class="text-secondary font-bold">@alejandralincoln</span>
+                                </a>
+                                <a href="https://www.facebook.com/alejandrapaolaramos/?locale=es_LA" target="_blank" class="flex items-center justify-between p-2 rounded hover:bg-slate-50 transition-colors">
+                                    <span class="font-semibold text-slate-700">Facebook Página</span>
+                                    <span class="text-secondary font-bold">alejandrapaolaramos</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SECCIÓN /ADMIN ==================== -->
+        <div id="page-admin" class="page-section">
+            <div class="bg-slate-900 text-white py-10 border-b border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+                    <div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-secondary text-3xl">admin_panel_settings</span>
+                            <h1 class="font-serif text-3xl font-bold">Panel de Administración (/admin)</h1>
+                        </div>
+                        <p class="text-slate-300 text-sm mt-1">Gestión de publicaciones, enlaces de video y generación automática de miniaturas.</p>
+                    </div>
+                    <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                        Sesión Activa
+                    </span>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <!-- Add/Edit Video Form (7 cols) -->
+                <div class="lg:col-span-7 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+                    <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                        <h2 class="font-serif text-xl font-bold text-slate-900">Agregar o Modificar Video</h2>
+                        <span class="text-xs text-slate-500 font-mono">Auto-generación de miniatura YouTube/Vimeo activada</span>
+                    </div>
+
+                    <form id="admin-video-form" onsubmit="saveAdminVideo(event)" class="space-y-5">
+                        <input type="hidden" id="admin-video-id" value="">
+                        
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Título del Video / Reportaje</label>
+                            <input type="text" id="admin-title" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-secondary focus:border-transparent outline-none text-sm" placeholder="Ej: Investigación especial sobre fondos públicos">
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Categoría</label>
+                                <select id="admin-category" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-secondary focus:border-transparent outline-none text-sm bg-white">
+                                    <option value="reportaje">Reportaje Especial</option>
+                                    <option value="entrevista">Entrevista Exclusiva</option>
+                                    <option value="directo">Emisión en Directo</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Duración (Ej: 42:15)</label>
+                                <input type="text" id="admin-duration" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-secondary focus:border-transparent outline-none text-sm" placeholder="35:00">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Enlace del Video (YouTube, Vimeo o MP4 Directo)</label>
+                            <input type="url" id="admin-url" required oninput="previewVideoLink()" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-secondary focus:border-transparent outline-none text-sm" placeholder="https://www.youtube.com/watch?v=XXXXXX o https://youtu.be/XXXXXX">
+                            <p class="text-[11px] text-slate-500 mt-1">La miniatura se extraerá automáticamente del enlace de YouTube o del archivo de video.</p>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Descripción corta</label>
+                            <textarea id="admin-desc" rows="3" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-secondary focus:border-transparent outline-none text-sm" placeholder="Breve resumen del contenido..."></textarea>
+                        </div>
+
+                        <!-- Automatic Thumbnail Preview -->
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-600 block mb-2">Vista Previa Automática de Miniatura</span>
+                            <div class="relative h-44 rounded-lg overflow-hidden bg-slate-900 border border-slate-300 flex items-center justify-center">
+                                <img id="admin-thumb-preview" src="" alt="Thumbnail preview" class="w-full h-full object-cover hidden">
+                                <video id="admin-video-preview" controls class="w-full h-full object-cover hidden"></video>
+                                <div id="admin-thumb-placeholder" class="text-center p-4">
+                                    <span class="material-symbols-outlined text-4xl text-slate-500 block mb-1">movie</span>
+                                    <p class="text-xs text-slate-400">Ingresa una URL de YouTube o sube un video para generar la carátula</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <button type="submit" class="flex-grow bg-secondary hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider py-3 rounded-lg shadow transition-colors flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined text-base">save</span>
+                                Guardar Video
+                            </button>
+                            <button type="button" onclick="resetAdminForm()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-lg transition-colors">
+                                Limpiar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Manage Existing Videos List (5 cols) -->
+                <div class="lg:col-span-5 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+                    <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                        <h2 class="font-serif text-xl font-bold text-slate-900">Videos Publicados</h2>
+                        <button onclick="restoreDefaultVideos()" class="text-xs text-secondary hover:underline font-bold">Restaurar Ejemplo</button>
+                    </div>
+
+                    <div id="admin-video-list" class="space-y-4 max-h-[600px] overflow-y-auto pr-1">
+                        <!-- List populated dynamically by JS renderAdminList() -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-white border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8 pb-8 border-b border-slate-800">
+                <!-- Col 1: Brand (5 cols) -->
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 80 L50 20 L80 80 M35 55 L65 55" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="50" cy="38" r="7" fill="#b52426"/>
+                        </svg>
+                        <span class="font-serif text-2xl font-bold tracking-tight">Alejandra Ramos</span>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed max-w-sm">
+                        Plataforma de periodismo independiente dedicada a la investigación de asuntos públicos, corrupción y derechos humanos. Financiación 100% transparente y libre de presiones editoriales.
+                    </p>
+                </div>
+
+                <!-- Col 2: Social Links (3 cols) -->
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="font-serif font-bold text-sm uppercase tracking-wider text-slate-300">Plataformas</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="https://www.youtube.com/@AlejandraRamosNoticias" target="_blank" class="hover:text-white transition-colors">YouTube (@AlejandraRamosNoticias)</a></li>
+                        <li><a href="https://www.instagram.com/alejandralincoln/?hl=es" target="_blank" class="hover:text-white transition-colors">Instagram (@alejandralincoln)</a></li>
+                        <li><a href="https://www.facebook.com/alejandrapaolaramos/?locale=es_LA" target="_blank" class="hover:text-white transition-colors">Facebook (alejandrapaolaramos)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Newsletter (4 cols) -->
+                <div class="md:col-span-4 space-y-3">
+                    <h4 class="font-serif font-bold text-sm uppercase tracking-wider text-slate-300">Boletín Semanal</h4>
+                    <p class="text-xs text-slate-400">Recibe cada viernes el resumen de investigaciones y adelantos exclusivos.</p>
+                    <form onsubmit="handleNewsletterSubmit(event)" class="flex gap-2">
+                        <input type="email" required placeholder="tu@correo.com" class="bg-slate-800 border border-slate-700 rounded text-xs px-3 py-2 text-white outline-none focus:border-secondary flex-grow">
+                        <button type="submit" class="bg-secondary hover:bg-red-700 text-white text-xs font-bold px-4 py-2 rounded transition-colors">
+                            Unirme
+                        </button>
+                    </form>
+                    <p id="newsletter-msg" class="text-[10px] text-emerald-400 hidden">¡Te has suscrito con éxito al boletín!</p>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 Alejandra Ramos Periodismo. Todos los derechos reservados.</p>
+                <div class="flex gap-6">
+                    <a href="javascript:void(0)" onclick="showPage('admin')" class="text-slate-400 hover:text-white font-mono">/admin</a>
+                    <a href="javascript:void(0)" onclick="alert('Protocolo de Ética: Independencia editorial absoluta, verificación cruzada de mínimo 2 fuentes independientes y derecho de réplica garantizado.')" class="hover:text-slate-400">Protocolo Ético</a>
+                    <a href="javascript:void(0)" onclick="alert('Privacidad: No utilizamos cookies de rastreo publicitario. Los envíos de formularios están cifrados de extremo a extremo.')" class="hover:text-slate-400">Política de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC & STATE MANAGEMENT -->
+    <script>
+        // Initial Default Videos Database
+        const defaultVideos = [
+            {
+                id: '1',
+                title: 'Crisis Hídrica: El negocio detrás de la sequía',
+                category: 'reportaje',
+                duration: '42:15',
+                url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+                thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg',
+                description: 'Desviación ilegal de cauces de ríos en regiones agrícolas sin supervisión del Estado.',
+                views: '142K vistas',
+                date: 'Hace 2 semanas'
+            },
+            {
+                id: '2',
+                title: 'Conversación sin filtro con la Fiscal General',
+                category: 'entrevista',
+                duration: '28:40',
+                url: 'https://www.youtube.com/watch?v=3JZ_D3ELwOQ',
+                thumbnail: 'https://img.youtube.com/vi/3JZ_D3ELwOQ/hqdefault.jpg',
+                description: 'Cuestionamientos directos sobre los casos de corrupción institucional archivados recientemente.',
+                views: '98K vistas',
+                date: 'Hace 1 mes'
+            },
+            {
+                id: '3',
+                title: 'La Huella Rusa en los Medios de la Región',
+                category: 'reportaje',
+                duration: '35:10',
+                url: 'https://www.youtube.com/watch?v=L_LUpnjgPso',
+                thumbnail: 'https://img.youtube.com/vi/L_LUpnjgPso/hqdefault.jpg',
+                description: 'Análisis de redes de desinformación operando durante los procesos electorales locales.',
+                views: '210K vistas',
+                date: 'Hace 2 meses'
+            },
+            {
+                id: '4',
+                title: 'Debate de Presupuesto Nacional: Minuto a Minuto',
+                category: 'directo',
+                duration: '1:12:00',
+                url: 'https://www.youtube.com/watch?v=kJQP7kiw5Fk',
+                thumbnail: 'https://img.youtube.com/vi/kJQP7kiw5Fk/hqdefault.jpg',
+                description: 'Cobertura en vivo desde el Congreso Nacional con análisis del gasto público en tiempo real.',
+                views: '75K vistas',
+                date: 'Hace 3 meses'
+            },
+            {
+                id: '5',
+                title: 'Hospitales en Ruina: Dónde fueron los fondos',
+                category: 'reportaje',
+                duration: '31:20',
+                url: 'https://www.youtube.com/watch?v=fJ9rUzIMcZQ',
+                thumbnail: 'https://img.youtube.com/vi/fJ9rUzIMcZQ/hqdefault.jpg',
+                description: 'Seguimiento a las obras de salud prometidas y no construidas en 5 provincias.',
+                views: '310K vistas',
+                date: 'Hace 4 meses'
+            },
+            {
+                id: '6',
+                title: 'Testimonios de la Selva: Defensores Ambientales',
+                category: 'entrevista',
+                duration: '45:00',
+                url: 'https://www.youtube.com/watch?v=9bZkp7q19f0',
+                thumbnail: 'https://img.youtube.com/vi/9bZkp7q19f0/hqdefault.jpg',
+                description: 'Líderes indígenas amenazados por la tala ilegal alzan la voz ante la inacción estatal.',
+                views: '165K vistas',
+                date: 'Hace 5 meses'
+            }
+        ];
+
+        // Load Videos from LocalStorage or Default
+        function getVideos() {
+            const stored = localStorage.getItem('ar_videos');
+            if (stored) {
+                try { return JSON.parse(stored); } catch (e) {}
+            }
+            localStorage.setItem('ar_videos', JSON.stringify(defaultVideos));
+            return defaultVideos;
+        }
+
+        function saveVideos(videos) {
+            localStorage.setItem('ar_videos', JSON.stringify(videos));
+            renderVideos();
+            renderAdminList();
+        }
+
+        function restoreDefaultVideos() {
+            if (confirm("¿Deseas restaurar la lista de videos predeterminados?")) {
+                localStorage.setItem('ar_videos', JSON.stringify(defaultVideos));
+                renderVideos();
+                renderAdminList();
+            }
+        }
+
+        // Extract YouTube ID helper
+        function getYouTubeId(url) {
+            if (!url) return null;
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[2].length === 11) ? match[2] : null;
+        }
+
+        // Render Public Video Grid
+        function renderVideos(filterCat = 'all') {
+            const container = document.getElementById('video-grid-container');
+            if (!container) return;
+            const videos = getVideos();
+            container.innerHTML = '';
+
+            videos.forEach(video => {
+                if (filterCat !== 'all' && video.category !== filterCat) return;
+
+                const ytId = getYouTubeId(video.url);
+                // Thumbnail logic: YouTube hqdefault or custom thumbnail URL or fallback
+                let thumbUrl = video.thumbnail;
+                if (!thumbUrl && ytId) {
+                    thumbUrl = `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`;
+                }
+                if (!thumbUrl) {
+                    thumbUrl = 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80';
+                }
+
+                let badgeColor = 'text-secondary';
+                let catLabel = 'Reportaje Especial';
+                if (video.category === 'entrevista') { badgeColor = 'text-blue-600'; catLabel = 'Entrevista Exclusiva'; }
+                if (video.category === 'directo') { badgeColor = 'text-amber-600'; catLabel = 'Emisión en Directo'; }
+
+                const card = document.createElement('div');
+                card.className = 'video-card bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col';
+                card.dataset.category = video.category;
+
+                card.innerHTML = `
+                    <div class="relative h-48 bg-slate-100">
+                        <img src="${thumbUrl}" alt="${video.title}" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=600&q=80'">
+                        <a href="${video.url}" target="_blank" class="absolute inset-0 bg-black/30 hover:bg-black/20 flex items-center justify-center group transition-colors">
+                            <div class="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-2xl">play_arrow</span>
+                            </div>
+                        </a>
+                        <span class="absolute bottom-2 right-2 bg-black/80 text-white text-xs font-mono px-2 py-1 rounded">${video.duration || '00:00'}</span>
+                    </div>
+                    <div class="p-5 flex-grow flex flex-col justify-between space-y-4">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider ${badgeColor} block mb-1">${catLabel}</span>
+                            <h3 class="font-serif text-lg font-bold text-slate-900 hover:text-secondary transition-colors">${video.title}</h3>
+                            <p class="text-slate-600 text-xs mt-2 line-clamp-2">${video.description}</p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span>${video.views || '0 vistas'}</span>
+                            <span>${video.date || 'Reciente'}</span>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Render Admin Videos List
+        function renderAdminList() {
+            const listContainer = document.getElementById('admin-video-list');
+            if (!listContainer) return;
+            const videos = getVideos();
+            listContainer.innerHTML = '';
+
+            videos.forEach(video => {
+                const ytId = getYouTubeId(video.url);
+                const thumbUrl = video.thumbnail || (ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80');
+
+                const item = document.createElement('div');
+                item.className = 'p-3 rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-between gap-3 hover:bg-white transition-colors';
+                item.innerHTML = `
+                    <div class="flex items-center gap-3 overflow-hidden">
+                        <img src="${thumbUrl}" class="w-16 h-12 object-cover rounded bg-slate-200 flex-shrink-0">
+                        <div class="min-w-0">
+                            <p class="text-xs font-bold text-slate-900 truncate">${video.title}</p>
+                            <span class="text-[10px] text-slate-500 uppercase font-semibold block">${video.category} • ${video.duration}</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-1 flex-shrink-0">
+                        <button onclick="editAdminVideo('${video.id}')" class="p-1.5 text-slate-600 hover:text-slate-900 hover:bg-slate-200 rounded" title="Editar">
+                            <span class="material-symbols-outlined text-lg">edit</span>
+                        </button>
+                        <button onclick="deleteAdminVideo('${video.id}')" class="p-1.5 text-red-600 hover:text-red-800 hover:bg-red-50 rounded" title="Eliminar">
+                            <span class="material-symbols-outlined text-lg">delete</span>
+                        </button>
+                    </div>
+                `;
+                listContainer.appendChild(item);
+            });
+        }
+
+        // Video Link Live Preview
+        function previewVideoLink() {
+            const url = document.getElementById('admin-url').value;
+            const imgPreview = document.getElementById('admin-thumb-preview');
+            const placeholder = document.getElementById('admin-thumb-placeholder');
+            const ytId = getYouTubeId(url);
+
+            if (ytId) {
+                imgPreview.src = `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`;
+                imgPreview.classList.remove('hidden');
+                placeholder.classList.add('hidden');
+            } else {
+                imgPreview.classList.add('hidden');
+                placeholder.classList.remove('hidden');
+            }
+        }
+
+        // Save Admin Video
+        function saveAdminVideo(e) {
+            e.preventDefault();
+            const id = document.getElementById('admin-video-id').value || Date.now().toString();
+            const title = document.getElementById('admin-title').value;
+            const category = document.getElementById('admin-category').value;
+            const duration = document.getElementById('admin-duration').value;
+            const url = document.getElementById('admin-url').value;
+            const description = document.getElementById('admin-desc').value;
+
+            const ytId = getYouTubeId(url);
+            const thumbnail = ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : '';
+
+            let videos = getVideos();
+            const existingIndex = videos.findIndex(v => v.id === id);
+
+            const newObj = {
+                id,
+                title,
+                category,
+                duration,
+                url,
+                thumbnail,
+                description,
+                views: '1 vista',
+                date: 'Reciente'
+            };
+
+            if (existingIndex >= 0) {
+                videos[existingIndex] = { ...videos[existingIndex], ...newObj };
+            } else {
+                videos.unshift(newObj);
+            }
+
+            saveVideos(videos);
+            resetAdminForm();
+            alert("¡Video guardado con éxito!");
+        }
+
+        function editAdminVideo(id) {
+            const videos = getVideos();
+            const video = videos.find(v => v.id === id);
+            if (!video) return;
+
+            document.getElementById('admin-video-id').value = video.id;
+            document.getElementById('admin-title').value = video.title;
+            document.getElementById('admin-category').value = video.category;
+            document.getElementById('admin-duration').value = video.duration;
+            document.getElementById('admin-url').value = video.url;
+            document.getElementById('admin-desc').value = video.description;
+            previewVideoLink();
+        }
+
+        function deleteAdminVideo(id) {
+            if (confirm("¿Estás seguro de eliminar este video?")) {
+                let videos = getVideos();
+                videos = videos.filter(v => v.id !== id);
+                saveVideos(videos);
+            }
+        }
+
+        function resetAdminForm() {
+            document.getElementById('admin-video-form').reset();
+            document.getElementById('admin-video-id').value = '';
+            document.getElementById('admin-thumb-preview').classList.add('hidden');
+            document.getElementById('admin-thumb-placeholder').classList.remove('hidden');
+        }
+
+        // Page Navigation Router
+        function showPage(pageId) {
+            document.querySelectorAll('.page-section').forEach(page => {
+                page.classList.remove('active');
+            });
+            const target = document.getElementById('page-' + pageId);
+            if (target) {
+                target.classList.add('active');
+            }
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('border-secondary', 'text-slate-900');
+                btn.classList.add('border-transparent', 'text-slate-600');
+            });
+
+            const activeNav = document.getElementById('nav-' + pageId);
+            if (activeNav) {
+                activeNav.classList.remove('border-transparent', 'text-slate-600');
+                activeNav.classList.add('border-secondary', 'text-slate-900');
+            }
+
+            if (pageId === 'admin') {
+                renderAdminList();
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function filterVideos(category) {
+            renderVideos(category);
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-slate-900', 'text-white');
+                btn.classList.add('bg-slate-200', 'text-slate-700');
+            });
+            event.target.classList.remove('bg-slate-200', 'text-slate-700');
+            event.target.classList.add('bg-slate-900', 'text-white');
+        }
+
+        function selectCategory(cat) {
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('border-secondary', 'bg-red-50');
+                btn.classList.add('border-slate-200');
+            });
+            const selected = document.getElementById('cat-' + cat);
+            if (selected) {
+                selected.classList.remove('border-slate-200');
+                selected.classList.add('border-secondary', 'bg-red-50');
+            }
+        }
+
+        function toggleAnonymousMode() {
+            const isAnon = document.getElementById('anonymous-toggle').checked;
+            const personalFields = document.getElementById('personal-fields');
+            if (isAnon) {
+                personalFields.style.opacity = '0.4';
+                document.getElementById('form-name').disabled = true;
+                document.getElementById('form-email').disabled = true;
+                document.getElementById('form-name').value = 'ANÓNIMO';
+                document.getElementById('form-email').value = 'anonimo@protegido.local';
+            } else {
+                personalFields.style.opacity = '1';
+                document.getElementById('form-name').disabled = false;
+                document.getElementById('form-email').disabled = false;
+                document.getElementById('form-name').value = '';
+                document.getElementById('form-email').value = '';
+            }
+        }
+
+        function handleFileSelect(event) {
+            const files = event.target.files;
+            const list = document.getElementById('file-list');
+            list.innerHTML = '';
+            for (let i = 0; i < files.length; i++) {
+                const item = document.createElement('div');
+                item.className = 'flex items-center gap-2 text-slate-700 font-medium';
+                item.innerHTML = `<span class="material-symbols-outlined text-sm text-secondary">description</span> ${files[i].name} (${(files[i].size / 1024 / 1024).toFixed(2)} MB)`;
+                list.appendChild(item);
+            }
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            document.getElementById('contact-form').classList.add('hidden');
+            document.getElementById('contact-success').classList.remove('hidden');
+        }
+
+        function resetContactForm() {
+            document.getElementById('contact-form').reset();
+            document.getElementById('contact-form').classList.remove('hidden');
+            document.getElementById('contact-success').classList.add('hidden');
+            document.getElementById('file-list').innerHTML = '';
+        }
+
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+            const msg = document.getElementById('newsletter-msg');
+            msg.classList.remove('hidden');
+            event.target.reset();
+            setTimeout(() => {
+                msg.classList.add('hidden');
+            }, 4000);
+        }
+
+        function copyFingerprint() {
+            const key = "4F89 2B10 99C3 881A 77FF 1200 AABB 3344";
+            navigator.clipboard.writeText(key);
+            const btn = document.getElementById('pgp-btn');
+            const original = btn.innerText;
+            btn.innerText = "¡Clave Copiada!";
+            btn.classList.add('bg-emerald-700', 'text-white');
+            setTimeout(() => {
+                btn.innerText = original;
+                btn.classList.remove('bg-emerald-700', 'text-white');
+            }, 2500);
+        }
+
+        // Initialize grid on DOM Load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderVideos();
+        });
+    </script>
+</body>
+</html>
